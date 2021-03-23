@@ -5,7 +5,9 @@ const app = express();
 
 const errorHandler = require('./controllers/error');
 
-const port = process.env.PORT || 3000
+const hostname = '0.0.0.0'
+
+const port = 3000
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
