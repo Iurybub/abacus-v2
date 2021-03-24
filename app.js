@@ -5,9 +5,6 @@ const app = express();
 
 const errorHandler = require('./controllers/error');
 
-const hostname = '0.0.0.0'
-
-const port = 3000
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');
@@ -25,5 +22,7 @@ app.use(userRoutes);
 
 app.use(errorHandler.get404);
 
-app.listen(port)
+
+const port = process.env.PORT || '5000';
+app.listen(port, () => console.log(`Server started on Port ${port}`));
 
